@@ -1,13 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background-color: rgb(59, 59, 59);
+}
+* {
+	margin: 0;
+	font-family: "Quicksand";
+	color: rgb(255, 255, 255);
+	letter-spacing: 0.10px;
+}
+.navbar {
+	padding: 20px;
+	display: flex;
+	background-color: rgb(47, 47, 47);
+	border-radius: 2px;
+	align-items: center;
+	letter-spacing: 0.75px;
+	/* margin: 0 auto; */
+	border-bottom: 2px solid #f2f2f2;
+}
+.navbar h1 {
+	color: #ab00d6;
+	font-size: 2em;
+	margin: 0 0 0 18.4%;
+}
+.navbar .links {
+	margin: 0 0 0 2%;
+}
+.navbar a {
+	margin-left: 16px;
+	text-decoration: none;
+	padding: 6px;
+	font-size: 1.25em;
+}
+.navbar a:hover {
+	color: #cc00ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content {
+	max-width: 125vh;
+	margin: 10px auto 40px auto;
+	padding: 20px;
+}
+
+.streamer-details {
+	max-width: 100vh;
+	width: 350px;
+	margin: 40px auto;
+	padding: 20px;
+}
+
+.streamer-list {
+	font-family: Montserrat, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap ;
+	flex-direction: row;
+	margin: 15px;
+}
+
+
+.streamer-preview {
+	flex-basis: 21%;
+	box-shadow: 0 0 3px 3px rgb(172, 172, 172);
+	background-color: #2f2f2f;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	padding: 10px;
+	position: relative;
+	width: 350px;
+	height: 310px;
+	max-width: 100%;
+	text-align: center;
+	margin: 5px;
+}
+.streamer-preview:hover {
+	box-shadow: 0.5px 0.5px 2px 2px rgb(191, 37, 238);
+}
+
+.streamer-preview a {
+	text-decoration: none;
+}
+
+.streamer-preview h3 {
+	margin: 10px 0;
+	font-size: 20px;
+	color: #a512ca;
+}
+
+.streamer-preview h6 {
+	margin: 5px 0;
+	text-transform: uppercase;
+}
+
+.streamer-preview p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.streamer-preview img {
+	border-radius: 5px;
+}
+
+.streamer-details h2 {
+	font-size: 20px;
+	color: #cc00ff;
+	margin-bottom: 10px;
+}
+.whitelist p {
+	margin: 5px 5px 5px 0;
+}
+
+.recaptcha {
+	margin: 20px;
+}
+
+.ip {
+	color:rgb(59, 59, 59);
+}
+
+.ip:hover {
+	color: white;
 }

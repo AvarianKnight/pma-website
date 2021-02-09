@@ -7,7 +7,7 @@ const Navbar = () => {
 			<div className="links">
 				<Link to="/">Streamers</Link>
 				<Link to="/whitelist">Whitelist</Link>
-				<a href="https://pma-rp-store.tebex.io/">Store</a>
+				<a href="https://store.pmarp.com/">Store</a>
 			</div>
 		</nav>
 	 );

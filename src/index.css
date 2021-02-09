@@ -10,25 +10,24 @@ body {
 	letter-spacing: 0.10px;
 }
 .navbar {
-	padding: 20px;
+	padding: 0.75%;
 	display: flex;
 	background-color: rgb(47, 47, 47);
 	border-radius: 2px;
 	align-items: center;
-	letter-spacing: 0.75px;
-	/* margin: 0 auto; */
+	letter-spacing: 1.5px;
 	border-bottom: 2px solid #f2f2f2;
 }
 .navbar h1 {
 	color: #ab00d6;
-	font-size: 2em;
+	font-size: 1.5em;
 	margin: 0 0 0 18.4%;
 }
 .navbar .links {
 	margin: 0 0 0 2%;
 }
 .navbar a {
-	margin-left: 16px;
+	margin-left: 8%;
 	text-decoration: none;
 	padding: 6px;
 	font-size: 1.25em;
@@ -37,10 +36,34 @@ body {
 	color: #cc00ff;
 }
 
+
+@media (max-width: 960px) {
+	.navbar { 
+		height: 40px;
+	 }
+	.navbar h1 {
+		margin: 0 0 0 10px;
+		font-size: 1em;
+	}
+	.navbar .links {
+		margin: 0 0 0 2%;
+	}
+	.navbar a {
+		margin-left: 15%;
+		padding: 0;
+		font-size: 1em;
+	}
+}
+
 .content {
 	max-width: 125vh;
 	margin: 10px auto 40px auto;
 	padding: 20px;
+}
+
+.no-streamers {
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
 }
 
 .streamer-details {

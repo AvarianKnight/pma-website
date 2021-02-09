@@ -1,5 +1,4 @@
 const StreamerList = ({streamers, title}) => {
-	console.log(streamers)
 	return ( 
 		<div>
 			<h1>{title}</h1>

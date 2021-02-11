@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Reaptcha from "reaptcha"
 
 const Whitelist = () => {
-	let [ip, setIp] = useState(null)
-	let [captcha, setCaptcha] = useState(null)
-	let [ready, setReady] = useState(false)
+	const [ip, setIp] = useState(null)
+	const [captcha, setCaptcha] = useState(null)
+	const [ready, setReady] = useState(false)
 
 	useEffect(() => {
 		fetch('https://api.pmarp.com/whitelist/get-ip')

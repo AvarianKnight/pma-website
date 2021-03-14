@@ -7,9 +7,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = merge(common, {
     mode: "development",
-    entry:["webpack/hot/dev-server","./src/index.tsx"],
+    entry:["webpack-dev-server/client?http://localhost:8080","webpack/hot/dev-server","./src/index.tsx"],
     output: {
-        path: __dirname,
+        path: path.resolve('./dist'),
         filename: 'bundle.js'
     },
     plugins: [
@@ -21,7 +21,7 @@ module.exports = merge(common, {
         }),
     ],
     devServer: {
-        contentBase: './',
+        contentBase: './src',
         // contentBase: path.join(__dirname, '../src/'),
         historyApiFallback: true,
         hot: true,

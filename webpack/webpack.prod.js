@@ -8,7 +8,7 @@ module.exports = merge(common, {
     mode: "production",
     entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: "index.js",
     },
     plugins: [
@@ -19,10 +19,8 @@ module.exports = merge(common, {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: "src/assets",
-                    to: path.resolve(
-                        "C:/FXServer/server-data/resources/pma-inventory/dist/assets"
-                    ),
+                    from: "public/icons",
+                    to: path.resolve(__dirname, '../dist'),
                 },
             ],
         }),

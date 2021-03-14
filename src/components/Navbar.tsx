@@ -6,6 +6,8 @@ const Navbar = () =>  (
 		<div className="links">
 			<Link to="/">Streamers</Link>
 			<Link to="/whitelist">Whitelist</Link>
+			{/* <Link to="/gangs">Gangs</Link> */}
+			<Link to="/discord">Discord</Link>
 			<a href="https://store.pmarp.com/">Store</a>
 		</div>
 	</nav>

@@ -11,7 +11,7 @@ const Home = () => {
 		const CancelToken = axios.CancelToken;
 		const source = CancelToken.source();
 			
-		axios.get(`${API_URL}/twitch/fetch-streamers`, {
+		axios.get(`${API_URL}/twitch`, {
 			cancelToken: source.token
 		}).then((res) => {
 			const data = res.data
@@ -26,7 +26,7 @@ const Home = () => {
 		})
 
 		const intervalId = setInterval(() => {
-			axios.get(`${API_URL}/twitch/fetch-streamers`, {
+			axios.get(`${API_URL}/twitch`, {
 				cancelToken: source.token
 			}).then((res) => {
 				const data = res.data
@@ -40,7 +40,7 @@ const Home = () => {
 					setFailed(e.message + ', if this error persists please report it on the discord.')
 				}
 			})
-		}, 5000)
+		}, 30000)
 
 		return () => source.cancel()
 	}, [])

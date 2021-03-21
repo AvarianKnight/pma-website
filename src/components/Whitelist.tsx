@@ -1,15 +1,17 @@
 import axios, { AxiosResponse } from "axios"
 import { useEffect, useState } from "react"
+// @ts-ignore
 import Reaptcha from "reaptcha"
 
 const Whitelist = () => {
 	const [ip, setIp] = useState<string | null>(null)
+	const [loaded, setLoaded] = useState<boolean>(false)
 
 	useEffect(() => {
 		const CancelToken = axios.CancelToken;
 		const source = CancelToken.source();
 			
-		axios.get(`${API_URL}/twitch/fetch-streamers`, {
+		axios.get(`${API_URL}/whitelist/ip`, {
 			cancelToken: source.token
 		}).then((res: AxiosResponse) => setIp(res.data.ip)).catch((err) =>  console.error)
 		
@@ -17,14 +19,14 @@ const Whitelist = () => {
 	}, [])
 
 	const onVerify = (verification: string) => {
-		axios.post(`${API_URL}/whitelist/add-whitelist`, {}, {
+		axios.post(`${API_URL}/whitelist`, {}, {
 			headers: {
 				"Content-Type": "application/json",
 				"g-recaptcha-response": verification,
 			},
 		})
 		.then((res: AxiosResponse) => {
-			if (res.data === "success") {
+			if (res.status === 201) {
 				window.location.href ="fivem://connect/fivem.pmarp.com:30120"
 			} else {
 				alert(
@@ -32,8 +34,8 @@ const Whitelist = () => {
 				)
 			}
 		})
-		.catch((e) => {
-			console.log(e)
+		.catch((err) => {
+			console.error(err)
 			alert("Failed to whitelist your ip, please refresh the page and try again.")
 		})
 	}
@@ -50,6 +52,7 @@ const Whitelist = () => {
 				whitelisted until the daily restart in the morning.
 			</p>
 			<Reaptcha
+				onLoad={() => setLoaded(true)}
 				className="recaptcha"
 				// actual
 				sitekey="6LeUrSsaAAAAAK0OpPxDixgAFJ_wmLeJCestJGDs"
@@ -57,6 +60,9 @@ const Whitelist = () => {
 				// sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
 				onVerify={onVerify}
 			/>
+			{!loaded && (
+				<div style={{margin: '10px'}}>Loading reCAPTCHA...</div>
+			)}
 		</div>
 	)
 }

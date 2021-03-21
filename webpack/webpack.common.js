@@ -2,7 +2,7 @@ const webpack = require('webpack')
 
 const API_URL = {
     production: JSON.stringify('https://api.pmarp.com'),
-    development: JSON.stringify('http://localhost:3002')
+    development: JSON.stringify('http://localhost:3000')
 }
 
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
